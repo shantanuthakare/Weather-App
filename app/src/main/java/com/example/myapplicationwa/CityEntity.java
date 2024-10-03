@@ -4,8 +4,10 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
+
 @Entity(tableName = "city")
-public class CityEntity {
+public class CityEntity  {
     @PrimaryKey(autoGenerate = true)
     private int id;
 

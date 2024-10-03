@@ -1,22 +1,25 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.MyApplicationWA" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.MyApplicationWA" parent="Theme.Material3.DayNight">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- Enable action bar -->
+        <item name="windowActionBar">true</item>
+        <item name="windowNoTitle">false</item>
     </style>
 
+    <!-- Light theme -->
     <style name="Theme.MyApplicationWA" parent="Base.Theme.MyApplicationWA" />
 
-<!--    for light-->
-
+    <!-- For light background -->
     <style name="SCREEN">
-        <item name="android:background">#FFF</item>
+        <item name="android:background">#8ABEE6</item>
+
 
     </style>
 
-<!--    for dark-->
+    <!-- For dark background -->
     <style name="TEXT">
         <item name="android:background">#000</item>
-
     </style>
 </resources>

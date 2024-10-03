@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    style="@style/SCREEN">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Weather Update Interval"
+        android:textSize="18sp"
+        android:paddingBottom="16dp" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupInterval"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/radioButton1Hour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1 Hour" />
+
+        <RadioButton
+            android:id="@+id/radioButton3Hours"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3 Hours" />
+
+        <RadioButton
+            android:id="@+id/radioButton6Hours"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="6 Hours" />
+
+        <RadioButton
+            android:id="@+id/radioButton12Hours"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12 Hours" />
+
+        <RadioButton
+            android:id="@+id/radioButton24Hours"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="24 Hours" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/buttonSetInterval"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Set Interval" />
+</LinearLayout>

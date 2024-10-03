@@ -1,6 +1,7 @@
 package com.example.myapplicationwa;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -17,14 +18,21 @@ public class CityListActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private CityListAdapter adapter;
 
+    private CityEntity currentLocationWeather;
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_city_list);
 
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        // Get current location weather data from intent
+        Intent intent = getIntent();
+        currentLocationWeather = (CityEntity) intent.getSerializableExtra("currentLocationWeather");
+
 
         // Load cities from the database
         loadCityList();
@@ -43,22 +51,32 @@ public class CityListActivity extends AppCompatActivity {
         }
 
         @Override
-        protected void onPostExecute(List<CityEntity> cityEntities) {
+        public void onPostExecute(List<CityEntity> cityEntities) {
             super.onPostExecute(cityEntities);
-            String lastSearchedCity = getLastSearchedCity();
-            for (int i = (cityEntities.size())-1; i>=0; i --){
 
+            if (currentLocationWeather != null) {
+                cityEntities.add(0, currentLocationWeather);
             }
-            adapter = new CityListAdapter(cityEntities, lastSearchedCity);
+            CityEntity getCurrentLocationWeather = getCurrentLocationWeather();
+            adapter = new CityListAdapter(cityEntities,currentLocationWeather);
             recyclerView.setAdapter(adapter);
-            adapter.moveToFirstPosition();
+            adapter.setRecyclerView(recyclerView);
+            adapter.moveToFirstPosition(cityEntities.toString());
+            adapter.setFirstItemEnhancement(recyclerView);
         }
     }
 
-    private String getLastSearchedCity() {
-        SharedPreferences sharedPreferences = getSharedPreferences("WeatherPrefs", Context.MODE_PRIVATE);
-        String userCity = sharedPreferences.getString("userCity", "Mumbai");
-        Log.d("CityListActivity", "Last searched city: " + userCity);
-        return userCity;
+//    private String getLastSearchedCity() {
+//        SharedPreferences sharedPreferences = getSharedPreferences("WeatherPrefs", Context.MODE_PRIVATE);
+//        String userCity = sharedPreferences.getString("userCity", "Mumbai");
+//        Log.d("CityListActivity", "Last searched city: " + userCity);
+//        return userCity;
+//    }
+
+    private CityEntity getCurrentLocationWeather() {
+        SharedPreferences sharedPreferences = getSharedPreferences("WeatherPrefs", MODE_PRIVATE);
+        String address = sharedPreferences.getString("currentLocationAddress", "");
+        String temp = sharedPreferences.getString("currentLocationTemp", "");
+        return new CityEntity(address, temp);
     }
 }

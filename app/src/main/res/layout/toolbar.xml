@@ -1,59 +1,104 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    style="@style/SCREEN">
+    android:background="@android:color/transparent">
 
-    <RelativeLayout
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp">
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true">
 
-
-        <ImageView
-            android:id="@+id/left_icon"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
-
-            android:src="@drawable/baseline_location_city_24"/>
-
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="13dp"
-            android:textSize="19sp"
-            android:layout_centerVertical="true"
-            android:id="@+id/toolbar_title"
-            android:text="Weather APP"
-            style="@style/SCREEN"
-            android:textStyle="bold"
-            android:textColor="#045072"/>
-
-
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:id="@+id/right_icon"
-            android:layout_centerVertical="true"
-
-            android:src="@drawable/baseline_app_settings_alt_24" />
-
-        <Switch
-            android:layout_width="45dp"
-            android:layout_height="33dp"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="58dp"
             android:gravity="center"
-            android:id="@+id/switcher"/>
+            android:orientation="horizontal"
+            android:padding="6dp">
+
+            <ImageView
+                android:id="@+id/notificationedit"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Share"
+                android:src="@drawable/baseline_edit_notifications_24"
+                android:clickable="true"
+                android:focusable="true" />
 
 
-    </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/menuIcon"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Share"
+                android:src="@drawable/share"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <ImageView
+                android:id="@+id/userLocation"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Location"
+                android:src="@drawable/location"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <ImageView
+                android:id="@+id/refreshApp123"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Refresh"
+                android:src="@drawable/refresh_123"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <ImageView
+                android:id="@+id/left_icon"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Menu"
+                android:src="@drawable/baseline_location_city_24"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <ImageView
+                android:id="@+id/right_icon"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Settings"
+                android:src="@drawable/baseline_app_settings_alt_24"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <Switch
+                android:id="@+id/switcher"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center" />
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
 
 
 </RelativeLayout>

@@ -2,35 +2,67 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SettingsActivity"
-    android:background="@drawable/gradiient_bg">
+    tools:context=".SettingsActivity">
 
-    <!-- Three-dot menu icon -->
-
+    <!-- Switch for enabling notifications -->
 
 
-
-    <Switch
-        android:id="@+id/notificationSwitch"
-        android:layout_width="487dp"
-        android:layout_height="131dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:checked="true"
-        android:elevation="8dp"
-        android:text="Enable Notifications"
-        android:textColor="#0365B2"
-        android:textSize="31sp"/>
-
-    <Button
-        android:id="@+id/refreshButton"
+    <include
+       android:layout_marginTop="13dp"
+        android:id="@+id/toolbar111111"
+        layout="@layout/toolbar_setting"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/notificationSwitch"
-        android:layout_centerHorizontal="true"
-        android:text="Refresh Weather"
-        android:onClick="refreshSettings" />
+        android:layout_height="wrap_content"/>
+
+    <!-- Top City Weather TextView and Spinner -->
+    <ImageView
+        android:id="@+id/refreshApp1234"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignBottom="@+id/toolbar111111"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="17dp"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Refresh"
+        android:gravity="center"
+        android:src="@drawable/refresh_123" />
+
+    <RelativeLayout
+        android:id="@+id/topCityLayout"
+        android:layout_width="403dp"
+        android:layout_height="632dp"
+        android:layout_below="@+id/toolbar111111"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="2dp"
+        android:elevation="8dp"
+        android:padding="16dp"
+        style="@style/SCREEN">
+
+        <TextView
+            android:id="@+id/topCityWeather"
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:gravity="center"
+            android:text="Top City Weather"
+            android:textColor="#0365B2"
+            android:textSize="18sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/topCitiesRecyclerView"
+            android:layout_width="366dp"
+            android:layout_height="match_parent"
+            android:layout_below="@id/topCityWeather"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="17dp"
+            android:scrollbars="vertical" />
+
+    </RelativeLayout>
+
 </RelativeLayout>

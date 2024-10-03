@@ -4,6 +4,11 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_APN_SETTINGS" />
 
     <application
         android:allowBackup="true"
@@ -15,23 +20,38 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplicationWA"
         tools:targetApi="31">
-        <activity
-            android:name=".CityListActivity"
-            android:exported="false" />
-        <activity
-            android:name=".SettingsActivity"
-            android:exported="false" />
+
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:label="WA Home">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <receiver android:name=".NotificationReceiver" />
+        <activity
+            android:name=".NotificationEdit"
+            android:exported="false" />
+        <activity
+            android:name=".WeatherNotifiactionReceiver"
+            android:exported="false" />
+        <activity
+            android:name=".CityListActivity"
+            android:exported="false"
+            android:label="Data base " />
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false"
+            android:label="Setting Page" />
+
+        <receiver
+            android:name=".WeatherNotifiactionReceiver"
+            android:exported="false" />
+        <receiver
+            android:name=".WeatherNotificationService"
+            android:exported="false" />
     </application>
 
 </manifest>

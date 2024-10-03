@@ -2,7 +2,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradiient_bg"
     android:orientation="vertical"
     android:padding="25dp"
     style="@style/SCREEN">
@@ -10,19 +9,18 @@
 
     <include
         layout="@layout/toolbar"
-        android:layout_width="372dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/TEXT"/>
+        style="@style/SCREEN"
+        android:background="?android:attr/selectableItemBackgroundBorderless"/>
 
     <RelativeLayout
         android:id="@+id/mainContainer"
         android:layout_width="match_parent"
         android:layout_height="600dp"
         android:layout_marginTop="80dp"
-        android:visibility="visible">
-
-
-
+        android:visibility="visible"
+        style="@style/SCREEN">
 
 
         <LinearLayout
@@ -161,14 +159,16 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="12sp"
-                        android:text="Sunrise"/>
+                        android:text="Sunrise"
+                        android:textColor="@color/white"/>
 
                     <TextView
                         android:id="@+id/sunrise"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="14sp"
-                        android:text="06:40 AM"/>
+                        android:text="06:40 AM"
+                        android:textColor="@color/white"/>
                 </LinearLayout>
 
                 <Space
@@ -198,14 +198,16 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="12sp"
-                        android:text="Sunset"/>
+                        android:text="Sunset"
+                        android:textColor="@color/white"/>
 
                     <TextView
                         android:id="@+id/sunset"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="14sp"
-                        android:text="06:40 AM"/>
+                        android:text="06:40 AM"
+                        android:textColor="@color/white"/>
                 </LinearLayout>
 
                 <Space
@@ -235,14 +237,16 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="12sp"
-                        android:text="Wind"/>
+                        android:text="Wind"
+                        android:textColor="@color/white"/>
 
                     <TextView
                         android:id="@+id/wind"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="14sp"
-                        android:text="06:40 AM"/>
+                        android:text="06:40 AM"
+                        android:textColor="@color/white"/>
                 </LinearLayout>
             </LinearLayout>
 
@@ -279,14 +283,16 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="12sp"
-                        android:text="Pressure"/>
+                        android:text="Pressure"
+                        android:textColor="@color/white"/>
 
                     <TextView
                         android:id="@+id/pressure"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="14sp"
-                        android:text="06:40 AM"/>
+                        android:text="06:40 AM"
+                        android:textColor="@color/white"/>
                 </LinearLayout>
 
                 <Space
@@ -316,14 +322,16 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="12sp"
-                        android:text="Humidity"/>
+                        android:text="Humidity"
+                        android:textColor="@color/white"/>
 
                     <TextView
                         android:id="@+id/humidity"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="14sp"
-                        android:text="06:40 AM"/>
+                        android:text="06:40 AM"
+                        android:textColor="@color/white"/>
                 </LinearLayout>
 
                 <Space
@@ -353,26 +361,20 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="12sp"
-                        android:text="Created By"/>
+                        android:text="Created By"
+                        android:textColor="@color/white"/>
 
                     <TextView
                         android:id="@+id/about"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="14sp"
-                        android:text="Shantanu"/>
+                        android:text="Shantanu"
+                        android:textColor="@color/white"/>
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
 
-        <ImageView
-            android:id="@+id/menuIcon"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="51dp"
-            android:layout_marginEnd="29dp"
-            android:foregroundGravity="center"
-            android:src="@drawable/share" />
 
     </RelativeLayout>
 
